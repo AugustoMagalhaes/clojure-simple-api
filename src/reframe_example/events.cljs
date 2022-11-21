@@ -1,11 +1,9 @@
 (ns reframe-example.events
-  (:require
-   [re-frame.core :as re-frame]
-   [reframe-example.db :as db]
-   [day8.re-frame.tracing :refer-macros [fn-traced]]
-   ))
+  (:require [day8.re-frame.tracing :refer-macros [fn-traced]]
+            [re-frame.core :as rf]
+            [reframe-example.db :as db]))
 
-(re-frame/reg-event-db
+(rf/reg-event-db
  ::initialize-db
  (fn-traced [_ _]
    db/default-db))
