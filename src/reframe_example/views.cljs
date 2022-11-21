@@ -6,4 +6,5 @@
   (let [name (rf/subscribe [::subs/name])]
     [:div
      [:h1
-      "Hello from " @name]]))
+      "Hello from " @name]
+     [:button {:on-click #(prn "hey")} "Update Name"]]))
