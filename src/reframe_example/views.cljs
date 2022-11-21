@@ -4,8 +4,7 @@
             [reframe-example.subs :as subs]))
 
 (defn display-cats-info
-  [[val]]
-  (prn "val: " val)
+  [[val]] 
   [:div
    [:p.cat-info val]])
 
@@ -22,8 +21,10 @@
          [:div.loader
           [:p.loading "Loading..."]]]])
      (when @cats (display-cats-info @cats))
+     [:label {:style {:font-size "18px", :padding-right "5px" :border "2px solid blue"}}"Digite seu nome:"
+      [:input.input-name {:type "text" :value @name :on-change #(rf/dispatch [::events/update-name (-> % .-target .-value)])}]]
      [:button.call {:on-click #(rf/dispatch [::events/fetch-cats-info])} "Make API Call"]
-     [:button.update {:on-click #(rf/dispatch [::events/update-name "novo nome"])} "Update Name"]]))
+     [:button.update {:on-click #(rf/dispatch [::events/update-name "AugustoMagalhaes"])} "Meu usuário Github"]]))
 
 
 
