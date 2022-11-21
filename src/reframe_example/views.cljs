@@ -14,14 +14,14 @@
         cats (rf/subscribe [::subs/cats-info])]
     [:div.container
      [:h1
-      "Hello from " @name]
+      "Bem-vindo(a) " @name "!"]
      (when @loading
        [:div.loader-wrapper
         [:div.loader-container
          [:div.loader
           [:p.loading "Loading..."]]]])
      (when @cats (display-cats-info @cats))
-     [:label {:style {:font-size "18px", :padding-right "5px" :border "2px solid blue"}}"Digite seu nome:"
+     [:label {:style {:font-size "18px", :padding-right "5px"}}"Digite seu nome:"
       [:input.input-name {:type "text" :value @name :on-change #(rf/dispatch [::events/update-name (-> % .-target .-value)])}]]
      [:button.call {:on-click #(rf/dispatch [::events/fetch-cats-info])} "Make API Call"]
      [:button.update {:on-click #(rf/dispatch [::events/update-name "AugustoMagalhaes"])} "Meu usuário Github"]]))
