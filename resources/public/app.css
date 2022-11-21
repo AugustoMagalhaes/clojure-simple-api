@@ -22,7 +22,13 @@ body {
 
 .cat-info {
   font-size: 20px;
-  color: #d54728;
+  color: #136531;
+  font-weight: 700;
+}
+
+.input-name {
+  margin-left: 10px;
+  font-size: 16px;
 }
 
 button {
@@ -35,12 +41,12 @@ button {
 
 .call {
   background-color: green;
-  color: white;
+  color: var(--smooth-white);
 }
 
 .update {
   background-color: blue;
-  color: white;
+  color: var(--smooth-white);
 }
 
 .loader-wrapper {
