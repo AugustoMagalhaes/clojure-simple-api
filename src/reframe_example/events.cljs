@@ -7,3 +7,8 @@
  ::initialize-db
  (fn-traced [_ _]
    db/default-db))
+
+(rf/reg-event-db
+ ::update-name
+ (fn [db [_ val]]
+   (assoc db :name val)))
