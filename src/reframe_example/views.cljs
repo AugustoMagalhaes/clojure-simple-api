@@ -24,3 +24,6 @@
      (when @cats (display-cats-info @cats))
      [:button.call {:on-click #(rf/dispatch [::events/fetch-cats-info])} "Make API Call"]
      [:button.update {:on-click #(rf/dispatch [::events/update-name "novo nome"])} "Update Name"]]))
+
+
+
