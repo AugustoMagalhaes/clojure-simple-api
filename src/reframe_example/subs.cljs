@@ -5,3 +5,8 @@
  ::name
  (fn [db]
    (:name db)))
+
+(rf/reg-sub
+ ::loading
+ (fn [db]
+   (:loading db)))
