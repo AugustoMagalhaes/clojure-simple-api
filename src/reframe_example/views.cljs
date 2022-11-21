@@ -7,16 +7,20 @@
   [[val]]
   (prn "val: " val)
   [:div
-   [:p {:style {:font-size "20px" :color "#d54728" :font-family "Helvetia"}}val]])
+   [:p.cat-info val]])
 
 (defn main-panel []
   (let [name (rf/subscribe [::subs/name])
         loading (rf/subscribe [::subs/loading])
         cats (rf/subscribe [::subs/cats-info])]
-    [:div
+    [:div.container
      [:h1
       "Hello from " @name]
-     (when @loading "Loading...")
+     (when @loading
+       [:div.loader-wrapper
+        [:div.loader-container
+         [:div.loader
+          [:p.loading "Loading..."]]]])
      (when @cats (display-cats-info @cats))
-     [:button {:on-click #(rf/dispatch [::events/fetch-cats-info])} "Make API Call"]
-     [:button {:on-click #(rf/dispatch [::events/update-name "novo nome"])} "Update Name"]]))
+     [:button.call {:on-click #(rf/dispatch [::events/fetch-cats-info])} "Make API Call"]
+     [:button.update {:on-click #(rf/dispatch [::events/update-name "novo nome"])} "Update Name"]]))
