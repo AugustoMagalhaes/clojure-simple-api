@@ -10,3 +10,8 @@
  ::loading
  (fn [db]
    (:loading db)))
+
+(rf/reg-sub
+ ::cats-info
+ (fn [db]
+   (:cats-info db)))

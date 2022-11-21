@@ -28,6 +28,9 @@
 
 (rf/reg-event-db
  ::fetch-cats-info-success
- (fn [db [_ {:keys [data]}]] 
-   (assoc db :cats-info data)))
+ (fn [db [_ {:keys [data]}]]
+   (prn (first data))
+   (-> db
+       (assoc :loading false)
+       (assoc :cats-info data))))
 

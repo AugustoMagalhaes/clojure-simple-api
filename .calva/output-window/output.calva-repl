@@ -32,3 +32,16 @@ clj꞉shadow.user꞉>  ; Use `alt+enter` to evaluate
 ;    (There is a button in the status bar for this)
 ; Jack-in done.
 cljs꞉cljs.user꞉>  ; Use `alt+enter` to evaluate
+nil
+; ------ WARNING - :undeclared-ns ------------------------------------------------
+;  Resource: <eval>:1:2
+;  No such namespace: rf, could not locate rf.cljs, rf.cljc, or JavaScript source providing "rf"
+; --------------------------------------------------------------------------------
+; 
+; 
+; ------ WARNING - :undeclared-var -----------------------------------------------
+;  Resource: <eval>:1:2
+;  Use of undeclared Var rf/reg-event-db
+; --------------------------------------------------------------------------------
+; 
+cljs꞉reframe-example.events꞉> 
